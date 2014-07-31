@@ -1,0 +1,8 @@
+name: BoxEconomy
+main: io.github.KoenMulder.BoxEconomy.BoxEconomy
+version: 1.0
+commands:
+  balance:
+    description: get account balance
+  pay:
+    description: send money
