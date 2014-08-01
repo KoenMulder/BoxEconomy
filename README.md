@@ -27,4 +27,5 @@ The BoxEconomy Bukkit Economy Plugin
 |/auction stop                                 |😴          |stops the auction the player created                |
 |/auction cancel [id]                          |😴          |cancel auction of id (admin command)                |
 |/bid [auction-id] [amount]                    |😴          |bid in the specified auction                        |
-|/be                                           |😴          |BoxEconomy admin command                            |
+|/be reload                                    |😴          |reload BoxEconomy from the config.yml(admin command)|
+|/be list                                      |😴          |shows the player the commands he is allowed to use  |
