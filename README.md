@@ -1,6 +1,8 @@
 BoxEconomy
 ==========
 
+![](https://raw.githubusercontent.com/KoenMulder/BoxEconomy/master/boxeconomy.png)
+
 The BoxEconomy Bukkit Economy Plugin
 
 ## Dependencies
