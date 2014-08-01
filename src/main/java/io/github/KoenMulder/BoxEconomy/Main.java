@@ -12,7 +12,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import org.bukkit.command.Command;
@@ -21,11 +20,12 @@ import org.bukkit.plugin.java.JavaPlugin;
  
 public class Main extends JavaPlugin implements Listener {	
 	@Override
-	public void onDisable(){
+	public void onDisable() {
 		getLogger().info("BoxEconomy shuts down");
 	}
 	@Override
-	public void onEnable(){
+	public void onEnable() {
+		this.saveDefaultConfig();
 		getServer().getPluginManager().registerEvents(this, this);
 		
 		File dataDir = new File(getDataFolder() + "/");
@@ -62,7 +62,7 @@ public class Main extends JavaPlugin implements Listener {
 		Player player = event.getPlayer();
 		if (!BankManager.hasAccount(player)) {
 			getLogger().info("Initializing bank account for " + event.getPlayer());
-			BankManager.initPlayer(player);
+			BankManager.initPlayer(player, Float.parseFloat(this.getConfig().getString("default_money")));
 		}
 	}
 }

@@ -4,16 +4,13 @@ import io.github.KoenMulder.BoxEconomy.BankAccount;
 
 import org.bukkit.Bukkit;
 
-import java.sql.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import java.util.logging.Logger;
-
-import java.io.*;
+//import java.util.logging.Logger;
 
 import com.google.gson.Gson;
 
@@ -51,7 +48,7 @@ public class Storage {
 	    s.close();
 	}
 	
-	public static void setValue(String key, BankAccount val) {
+	public static void setAccountValue(String key, BankAccount val) {
 		String json = gson.toJson(val);
 		Statement s = null;
 		
@@ -80,7 +77,7 @@ public class Storage {
 		// db.put(bytes(key), bytes(gson.toJson(val)));
 	}
 	
-	public static BankAccount getValue(String name) {
+	public static BankAccount getAccountValue(String name) {
 		Statement s = null;
 		String json = null;
 		
