@@ -25,7 +25,7 @@ public class Storage {
 	private static Gson gson;
 	
 	static {
-		dbFile = Bukkit.getPluginManager().getPlugin("BoxEconomy").getDataFolder().getPath() + "/accounts.db";
+		dbFile = Bukkit.getPluginManager().getPlugin("BoxEconomy").getDataFolder().getPath() + "/data.db";
 		try {
 			Class.forName("org.sqlite.JDBC");
 			db = DriverManager.getConnection("jdbc:sqlite:" + dbFile);

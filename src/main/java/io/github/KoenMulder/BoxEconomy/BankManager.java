@@ -25,6 +25,12 @@ public class BankManager {
 		Storage.setAccountValue(player.getUniqueId().toString(), account);
 	}
 	
+	public static void modifyBalance(Player player, float value) {
+		float current = getBalance(player);
+		
+		setBalance(player, current + value);
+	}
+	
 	public static boolean transferMoney(Player p1, Player p2, float amount) {
 		//float p1Money = Storage.getAccountValue(p1.getName()).balance;
 		float p1Money = getBalance(p1);
