@@ -2,7 +2,6 @@ package io.github.KoenMulder.BoxEconomy;
 
 import io.github.KoenMulder.BoxEconomy.BankAccount;
 import io.github.KoenMulder.BoxEconomy.BankManager;
-import java.util.logging.Logger;
  
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -21,18 +20,14 @@ public class Commands {
 				}
 			}
 			else if (adminPerm && args.length == 3) {
-				Logger.getLogger("Minecraft").info("3 args");
-				//Logger.getLogger("Minecraft").info(args[1]);
 				
 				Player target = Bukkit.getPlayer(args[0]);
 				float amount = Float.parseFloat(args[2]);
 				
 				if (args[1].equalsIgnoreCase("add")) {
-					Logger.getLogger("Minecraft").info("add");
 					BankManager.modifyBalance(target, amount);
 				}
 				else if (args[1].equalsIgnoreCase("remove")) {
-					Logger.getLogger("Minecraft").info("remove");
 					BankManager.modifyBalance(target, -amount);
 				}
 				else {
@@ -41,7 +36,7 @@ public class Commands {
 			}
 			else {
 				if (adminPerm) {
-					player.sendMessage("usage: /balance [name add|remove amount]");
+					player.sendMessage("usage: /balance [[name] add|remove [amount]]");
 				}
 				else {
 					player.sendMessage("usage: /balance");
