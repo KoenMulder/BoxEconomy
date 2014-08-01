@@ -1,5 +1,13 @@
 package io.github.KoenMulder.BoxEconomy;
 
 public class BankAccount {
-	float balance;
+	public float balance;
+	
+	BankAccount(float balance) {
+		this.balance = balance;
+	}
+	
+	public float getBalance() {
+		return this.balance;
+	}
 }

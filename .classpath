@@ -33,7 +33,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="/Users/AlexanderSelzer1/Documents/bukkit-1.7.9-R0.2.jar"/>
-	<classpathentry kind="lib" path="/Users/AlexanderSelzer1/Documents/leveldbjni-all-1.8.jar"/>
 	<classpathentry kind="lib" path="/Users/AlexanderSelzer1/Documents/google-gson-2.2.4/gson-2.2.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -1,6 +1,11 @@
 package io.github.KoenMulder.BoxEconomy;
  
+import java.io.File;
+import java.sql.SQLException;
+
 import io.github.KoenMulder.BoxEconomy.Commands;
+import io.github.KoenMulder.BoxEconomy.BankManager;
+import io.github.KoenMulder.BoxEconomy.Storage;
 
 
 import org.bukkit.event.Listener;
@@ -22,6 +27,17 @@ public class Main extends JavaPlugin implements Listener {
 	@Override
 	public void onEnable(){
 		getServer().getPluginManager().registerEvents(this, this);
+		
+		File dataDir = new File(getDataFolder() + "/");
+		if(!dataDir.exists())
+		   dataDir.mkdir();
+		
+		try {
+			Storage.init();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		getLogger().info("Boxeconomy started");
 	}
  
@@ -43,7 +59,10 @@ public class Main extends JavaPlugin implements Listener {
 	
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
-		getLogger().info(event.getPlayer().getName()+ "joined nadjsjdnjajns");
-		event.getPlayer().sendMessage("hihihihihi");
+		Player player = event.getPlayer();
+		if (!BankManager.hasAccount(player)) {
+			getLogger().info("Initializing bank account for " + event.getPlayer());
+			BankManager.initPlayer(player);
+		}
 	}
 }
