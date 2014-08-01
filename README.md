@@ -16,7 +16,7 @@ The BoxEconomy Bukkit Economy Plugin
 |  name                                        |   status   |     description                                    |
 |----------------------------------------------|------------|----------------------------------------------------|
 |/balance                                      |😃          |get your current account balance                    |
-|/balance [player]                             |😴          |shows the spedified players account(admin command)  |
+|/balance [player]                             |😃          |shows the spedified players account(admin command)  |
 |/balance [player] remove [amount]             |😴          |remove money from the players account(admin command)|
 |/balance [player] add [amount]                |😴          |add money to the players account(admin command)     |
 |/pay [player] [amount]                        |😴          |give money to another player                        |
