@@ -21,7 +21,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin implements Listener {	
 	@Override
 	public void onDisable() {
-		getLogger().info("BoxEconomy shuts down");
+		
 	}
 	@Override
 	public void onEnable() {
@@ -37,8 +37,6 @@ public class Main extends JavaPlugin implements Listener {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		getLogger().info("Boxeconomy started");
 	}
  
 	@Override
@@ -52,6 +50,9 @@ public class Main extends JavaPlugin implements Listener {
 			break;
 		case "pay":
 			Commands.pay(player, args);
+			break;
+		case "trade":
+			Commands.trade(player, args);
 			break;
 		}
 		return true;

@@ -8,11 +8,11 @@ import io.github.KoenMulder.BoxEconomy.BankAccount;
 public class BankManager {
 	public static void initPlayer(Player player, float startingMoney)  {
 		BankAccount account = new BankAccount(startingMoney);
-		Storage.setAccountValue(player.getUniqueId().toString(), account);
+		Storage.setAccount(player.getUniqueId().toString(), account);
 	}
 	
 	public static float getBalance(Player player) {
-		BankAccount account = Storage.getAccountValue(player.getUniqueId().toString());
+		BankAccount account = Storage.getAccount(player.getUniqueId().toString());
 		
 		if (account == null)
 			return (float) 0.002;
@@ -22,7 +22,7 @@ public class BankManager {
 	
 	public static void setBalance(Player player, float value) {
 		BankAccount account = new BankAccount(value);
-		Storage.setAccountValue(player.getUniqueId().toString(), account);
+		Storage.setAccount(player.getUniqueId().toString(), account);
 	}
 	
 	public static void modifyBalance(Player player, float value) {
@@ -54,7 +54,7 @@ public class BankManager {
 	}
 	
 	public static boolean hasAccount(Player player) {
-		BankAccount account = Storage.getAccountValue(player.getUniqueId().toString());
+		BankAccount account = Storage.getAccount(player.getUniqueId().toString());
 		
 		if (account != null) {
 			return true;

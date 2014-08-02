@@ -1,8 +1,10 @@
 name: BoxEconomy
 main: io.github.KoenMulder.BoxEconomy.Main
-version: 0.1
+version: 0.2
 commands:
   balance:
     description: get account balance
   pay:
     description: send money
+  trade:
+    description: trade with a player
