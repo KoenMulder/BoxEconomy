@@ -55,22 +55,22 @@ public class Commands {
 	}
 	
 	public static void pay(Player player, String[] args) {
-		// pay <player> <sum>
-		if (args.length == 2) {
-			Player recipient = Bukkit.getPlayer(args[0]);
+			// pay <player> <sum>
+			if (args.length == 2) {
+				Player recipient = Bukkit.getPlayer(args[0]);
 			
-			if (recipient == null || !recipient.isOnline()) {
-				player.sendMessage("player is not online");
+				if (recipient == null || !recipient.isOnline()) {
+					player.sendMessage("player is not online");
+				}
+				else {
+					float amount = Float.parseFloat(args[1]);
+					BankManager.transferMoney(player, recipient, amount);
+				}
 			}
+			// error
 			else {
-				float amount = Float.parseFloat(args[1]);
-				BankManager.transferMoney(player, recipient, amount);
+				player.sendMessage("usage: /pay <player> <amount>");
 			}
-		}
-		// error
-		else {
-			player.sendMessage("usage: /pay <player> <amount>");
-		}
 	}
 	
 	public static void trade(Player player, String[] args) {

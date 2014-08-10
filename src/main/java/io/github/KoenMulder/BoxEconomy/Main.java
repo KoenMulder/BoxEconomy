@@ -42,6 +42,10 @@ public class Main extends JavaPlugin implements Listener {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String name, String[] args) {
 		String cmdName = cmd.getName().toLowerCase();
+		if (!(sender instanceof Player)) {
+			sender.sendMessage("no console usage");
+			return false;
+		}
 		Player player = (Player) sender;
 		
 		switch(cmdName) {
